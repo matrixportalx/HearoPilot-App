@@ -20,8 +20,8 @@ android {
         applicationId = "com.hearopilot.app"
         minSdk = 30
         targetSdk = 35
-        versionCode = 20260610
-        versionName = "1.32.02"
+        versionCode = 20260611
+        versionName = "1.32.03"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

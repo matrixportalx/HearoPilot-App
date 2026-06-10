@@ -361,29 +361,61 @@ static void shift_context() {
     LOGi("%s: Context shifting done! Current position: %d", __func__, current_position);
 }
 
+// Render a message list through the model's Jinja chat template.
+//
+// Uses common_chat_templates_apply directly (rather than common_chat_format_single) so we can
+// pass enable_thinking. For most models the parameter is a no-op in their template; for Gemma 4
+// it makes the template omit <|think|> from the system turn and append the thinking-suppression
+// prefix in the generation prompt.
+//
+// May throw std::exception: some templates (e.g. Qwen3.5) refuse to render a message list that
+// does not contain a user turn ("No user query found in messages."). Callers must handle this.
+static std::string apply_chat_template(const std::vector<common_chat_msg> &messages,
+                                       bool add_generation_prompt) {
+    common_chat_templates_inputs inputs;
+    inputs.use_jinja             = true;
+    inputs.enable_thinking       = g_model_enable_thinking;
+    inputs.messages              = messages;
+    inputs.add_generation_prompt = add_generation_prompt;
+    return common_chat_templates_apply(g_chat_templates.get(), inputs).prompt;
+}
+
 static std::string chat_add_and_format(const std::string &role, const std::string &content) {
     common_chat_msg new_msg{role, content};
 
-    // Use common_chat_templates_apply directly (rather than common_chat_format_single) so we
-    // can pass enable_thinking. For most models the parameter is a no-op in their template;
-    // for Gemma 4 it makes the Jinja template omit <|think|> from the system turn and
-    // automatically append the thinking-suppression prefix in the generation prompt.
-    common_chat_templates_inputs inputs;
-    inputs.use_jinja       = true;
-    inputs.enable_thinking = g_model_enable_thinking;
+    // Render the conversation including the new message. The generation prompt is only appended
+    // for USER turns (the model is expected to reply right after).
+    std::vector<common_chat_msg> with_new = chat_msgs;
+    with_new.push_back(new_msg);
 
-    // Compute the already-formatted prefix to extract only the new message diff.
-    std::string fmt_past;
-    if (!chat_msgs.empty()) {
-        inputs.messages              = chat_msgs;
-        inputs.add_generation_prompt = false;
-        fmt_past = common_chat_templates_apply(g_chat_templates.get(), inputs).prompt;
+    std::string fmt_new;
+    try {
+        fmt_new = apply_chat_template(with_new, role == ROLE_USER);
+    } catch (const std::exception &e) {
+        // The system turn is the only message we ever format before a user turn exists. Some
+        // templates (e.g. Qwen3.5) cannot render a list without a user turn and raise here.
+        // Defer the system turn: keep it in chat_msgs so it is folded into the next user turn,
+        // but emit no tokens now. Re-throw for USER/ASSISTANT turns — those are always valid.
+        if (role == ROLE_SYSTEM) {
+            LOGw("%s: template cannot render the system turn alone (%s) — deferring it to the next user turn",
+                 __func__, e.what());
+            chat_msgs.push_back(new_msg);
+            return "";
+        }
+        throw;
     }
 
-    inputs.messages = chat_msgs;
-    inputs.messages.push_back(new_msg);
-    inputs.add_generation_prompt = (role == ROLE_USER);
-    const auto fmt_new = common_chat_templates_apply(g_chat_templates.get(), inputs).prompt;
+    // Compute the already-formatted prefix to extract only the new message diff. If the prefix is
+    // itself a list the template cannot render alone (a deferred system turn), treat fmt_new as
+    // entirely new so the system turn is encoded together with this message.
+    std::string fmt_past;
+    if (!chat_msgs.empty()) {
+        try {
+            fmt_past = apply_chat_template(chat_msgs, false);
+        } catch (const std::exception &) {
+            fmt_past.clear();
+        }
+    }
 
     const auto diff = fmt_new.substr(fmt_past.size());
     // Preserve leading newline when past text ends with '\n' (mirrors common_chat_format_single).
@@ -498,6 +530,16 @@ Java_com_arm_aichat_internal_InferenceEngineImpl_processSystemPrompt(
     const bool has_chat_template = common_chat_templates_was_explicit(g_chat_templates.get());
     if (has_chat_template) {
         formatted_system_prompt = chat_add_and_format(ROLE_SYSTEM, incoming_system_prompt);
+    }
+
+    // The template may defer the system turn (empty result) when it cannot be rendered without a
+    // user turn (e.g. Qwen3.5). In that case encode nothing now: the system turn is folded into
+    // the first user prompt. Tokenizing an empty string with add_special would emit a stray BOS
+    // at position 0, which the user turn would then duplicate.
+    if (formatted_system_prompt.empty()) {
+        LOGi("%s: system turn deferred to the first user prompt — nothing to encode", __func__);
+        system_prompt_position = current_position = 0;
+        return 0;
     }
 
     // Tokenize system prompt
