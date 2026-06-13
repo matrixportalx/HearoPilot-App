@@ -1,0 +1,488 @@
+<resources>
+    <!-- App Info -->
+    <string name="app_name">HearoPilot</string>
+
+    <!-- Common Actions -->
+    <string name="start">Başlat</string>
+    <string name="stop">Durdur</string>
+    <string name="copy">Kopyala</string>
+    <string name="clear">Temizle</string>
+    <string name="delete">Sil</string>
+    <string name="dismiss">Kapat</string>
+    <string name="cancel">İptal</string>
+    <string name="settings">Ayarlar</string>
+    <string name="reset">Sıfırla</string>
+    <string name="rename">Yeniden Adlandır</string>
+
+    <!-- Rename Session Dialog -->
+    <string name="rename_session_title">Oturumu Yeniden Adlandır</string>
+    <string name="rename_session_hint">Oturum adı</string>
+
+    <!-- Recording Notification -->
+    <string name="notification_channel_recording_name">Kayıt Oturumu</string>
+    <string name="notification_channel_recording_description">Kayıt etkin olduğunda gösterilir</string>
+    <string name="notification_recording_title">Kayıt etkin</string>
+    <string name="notification_action_stop">Durdur</string>
+
+    <!-- Model Download Notification -->
+    <string name="notification_channel_download_name">Model İndirmeleri</string>
+    <string name="notification_channel_download_description">Yapay zeka modelleri indirilirken ilerlemeyi gösterir</string>
+    <string name="notification_download_title">Yapay zeka modelleri indiriliyor</string>
+    <string name="notification_download_progress">%1$d%% indirildi</string>
+    <string name="notification_download_completing">İndirme tamamlanıyor…</string>
+
+    <!-- LLM Processing Notification -->
+    <string name="notification_channel_llm_processing_name">Yapay Zeka İşleme</string>
+    <string name="notification_channel_llm_processing_description">Yapay zeka transkripsinizi analiz ederken gösterilir</string>
+    <string name="notification_llm_processing_title">Transkript analiz ediliyor</string>
+    <string name="notification_llm_processing_text">Yapay zeka kaydınızı işliyor…</string>
+
+    <!-- Sessions Screen -->
+    <string name="sessions_title">HearoPilot</string>
+    <string name="sessions_subtitle">Transkriptlerim</string>
+    <string name="new_transcription">Yeni Transkript</string>
+    <string name="session_unnamed">(Adsız)</string>
+
+    <!-- Empty State -->
+    <string name="empty_state_title">Transkripte hazır</string>
+    <string name="empty_state_subtitle">Bir oturum oluşturun ve kayda başlayın.\nHer şey cihazınızda, gizli olarak çalışır.</string>
+    <string name="empty_state_step1_title">Oturum oluşturun</string>
+    <string name="empty_state_step1_desc">Başlamak için aşağıdaki + düğmesine dokunun</string>
+    <string name="empty_state_step2_title">Ses kaydedin</string>
+    <string name="empty_state_step2_desc">Sesi gerçek zamanlı olarak yakalamak için mikrofona basın</string>
+    <string name="empty_state_step3_title">Yapay zeka içgörüleri alın</string>
+    <string name="empty_state_step3_desc">Yapay zeka transkriptinizi otomatik olarak analiz eder</string>
+    <string name="empty_state_privacy">Tüm işlemler cihazınızda gerçekleşir</string>
+    <string name="empty_state_privacy_title">Tamamen cihazda</string>
+    <string name="header_stat_sessions">oturum</string>
+    <string name="header_stat_duration">toplam</string>
+    <string name="header_stat_data">gizli tutuldu</string>
+
+    <!-- New Session Dialog -->
+    <string name="new_session_dialog_title">Yeni Transkript</string>
+    <string name="new_session_name_label">Bu transkripte bir ad verin (isteğe bağlı)</string>
+    <string name="new_session_name_hint">örn. Toplantı Notları</string>
+    <string name="new_session_name_tip">💡 Boş bırakabilirsiniz, tarih/saat kullanırız.</string>
+    <string name="new_session_recording_type">Kayıt Türü</string>
+    <string name="recording_type_short">Kısa Kayıt</string>
+    <string name="recording_type_short_desc">≤10 dak - Sık içgörüler</string>
+    <string name="recording_type_long">Uzun Kayıt</string>
+    <string name="recording_type_long_desc">3 saate kadar - Yapılandırılabilir aralıklar</string>
+
+    <!-- Main Screen - Tabs -->
+    <string name="tab_transcription">Transkript</string>
+    <string name="tab_insights">Yapay Zeka İçgörüleri</string>
+    <string name="recording_session">Kayıt Oturumu</string>
+    <string name="initializing_models">Modeller yükleniyor…</string>
+    <string name="recording_active">Kaydediliyor</string>
+    <string name="recording_paused">Duraklatıldı</string>
+    <string name="back_to_sessions">Oturumlara dön</string>
+    <string name="stop_recording_confirm_title">Kayıt Durdurulsun mu?</string>
+    <string name="stop_recording_confirm_message">Kayıt devam ediyor. Kaydı durdurup geri dönülsün mü?</string>
+    <string name="stop_and_go_back">Durdur &amp; Geri Dön</string>
+    <string name="record">Kaydet</string>
+    <string name="llm">Yapay Zeka</string>
+
+    <!-- Transcription Tab -->
+    <string name="transcription_listening">Dinleniyor...</string>
+    <string name="transcription_empty">Henüz transkript yok</string>
+    <string name="transcription_press_record">Başlamak için Kaydet\'e basın</string>
+    <string name="transcription_hint1_title">Kayda dokunun</string>
+    <string name="transcription_hint1_desc">Ses yakalamaya başlamak için alttaki mikrofon düğmesine basın</string>
+    <string name="transcription_hint2_title">Yapay zeka içgörüleri</string>
+    <string name="transcription_hint2_desc">Özet ve eylem öğeleri almak için İçgörüler sekmesine geçin</string>
+    <string name="transcription_hint3_title">Tamamen gizli</string>
+    <string name="transcription_hint3_desc">Her şey cihazınızda çalışır — buluta hiçbir şey gönderilmez</string>
+    <string name="transcription_complete">Tamamlandı</string>
+    <string name="transcription_error">Hata: %s</string>
+
+    <!-- AI Insights Tab -->
+    <string name="insights_disabled">Yapay zeka içgörüleri devre dışı</string>
+    <string name="insights_disabled_subtitle">Bu özelliği kullanmak için Ayarlar\'dan Yapay Zeka Analizini etkinleştirin</string>
+    <string name="insights_empty">Yapay zeka içgörüleri burada görünecek</string>
+    <string name="insights_empty_subtitle">Kayıt sırasında oluşturulur</string>
+    <string name="insights_model_unavailable">LLM modeli indirilmedi</string>
+    <string name="llm_model_not_downloaded_error">LLM modeli indirilmedi. Lütfen Ayarlar\'dan indirin.</string>
+    <string name="insights_download_prompt">İçgörüleri etkinleştirmek için yapay zeka modelini indirin</string>
+    <string name="insights_download_button">Modeli İndir</string>
+    <string name="insights_downloading">İndiriliyor: %d%%</string>
+    <string name="insights_download_speed">%s MB/s</string>
+    <string name="insights_download_eta">Tahmini süre: %s</string>
+    <string name="insight_label">Yapay Zeka İçgörüsü</string>
+    <string name="action_items">Eylem Öğeleri</string>
+    <string name="segments_analyzed">%d segment analiz edildi</string>
+    <string name="expand">Genişlet</string>
+    <string name="collapse">Daralt</string>
+    <string name="source_transcription">Kaynak Transkript:</string>
+    <string name="segments_not_found">(Segmentler bulunamadı)</string>
+
+    <!-- System Prompts — English version used as default and fallback.
+         Each locale file contains a fully translated version of the prompt instructions.
+         JSON field names ("title", "summary", "action_items") MUST remain in English in
+         all locales — only the surrounding instructional text is translated.
+         The {target_language} placeholder in prompt_translation must remain untranslated. -->
+    <!-- Instructions are intentionally placed BEFORE the JSON template so the model
+         does not echo them as field values. Field placeholders use "..." to prevent
+         the model from treating descriptive hints as literal output. -->
+    <string name="prompt_simple_listening">Ses transkriptlerini analiz eden bir yapay zeka asistanısınız.\nKısa bir başlık (en fazla 8 kelime) ve girdi uzunluğuyla orantılı özlü bir özet yazın — kısa girdi için 1-2 cümle, uzun girdi için bir paragraf.\nYALNIZCA bu tam yapıya sahip geçerli JSON çıktısı üretin. Markdown yok. Kod çiti yok. Backtick yok:\n{\"title\": \"...\", \"summary\": \"...\"}\nJSON\'ı doğrudan çıktılayın.</string>
+    <string name="prompt_short_meeting">Tartışmaları analiz eden bir toplantı asistanısınız.\nBir başlık (en fazla 8 kelime), temel kararların ve tartışma noktalarının özeti (en az 3-5 cümle, girdi uzunluğuyla orantılı) ve uygulanabilir görevlerin listesini yazın.\nYALNIZCA bu tam yapıya sahip geçerli JSON çıktısı üretin. Markdown yok. Kod çiti yok. Backtick yok:\n{\"title\": \"...\", \"summary\": \"...\", \"action_items\": [\"...\", \"...\"]}\nDoğrudan olun. Uygulanabilir görevleri açıkça çıkarın.</string>
+    <string name="prompt_long_meeting">Uzun tartışmaları analiz eden bir asistanısınız.\nAna konuyu yakalayan bir başlık (en fazla 8 kelime), temel konuların, kararların ve sonuçların kapsamlı özeti (girdi uzunluğuyla orantılı) ve uygulanabilir görevlerin listesini yazın.\nYALNIZCA bu tam yapıya sahip geçerli JSON çıktısı üretin. Markdown yok. Kod çiti yok. Backtick yok:\n{\"title\": \"...\", \"summary\": \"...\", \"action_items\": [\"...\", \"...\"]}\nDoğrudan olun. Üst düzey içgörülere ve somut sonuçlara odaklanın.</string>
+    <string name="prompt_translation">Profesyonel bir çevirmenisiniz.\nAşağıdaki metni {target_language} diline çevirin.\nYalnızca çeviriyi çıktılayın. Açıklama, etiket veya önek yok.</string>
+    <!-- JSON output field names in English (default locale). Localized in values-XX/strings.xml. -->
+    <string name="json_field_title">title</string>
+    <string name="json_field_summary">summary</string>
+    <string name="json_field_action_items">action_items</string>
+
+    <!-- Batch insight prompts (end-of-session map-reduce pipeline) -->
+    <string name="prompt_batch_chunk_summary">Bir toplantı analizi asistanısınız. Aşağıdaki transkript parçasını kısaca özetleyin.\nŞunları dahil edin: tartışılan ana konular, alınan kararlar ve belirtilen eylem öğeleri.\nÖzeti girdi uzunluğuyla orantılı tutun. YALNIZCA geçerli JSON çıktısı üretin. Markdown yok. Kod çiti yok.\n{\"title\": \"...\", \"summary\": \"...\", \"action_items\": [\"...\"]}</string>
+    <string name="prompt_batch_merge">Bir toplantı analizi asistanısınız. Aşağıda tek bir kaydın ardışık bölümlerinin özetleri yer almaktadır.\nBunları kapsamlı ve tutarlı tek bir özette birleştirin. Birden fazla parçada görünen eylem öğelerini tekilleştirin.\nYALNIZCA geçerli JSON çıktısı üretin. Markdown yok. Kod çiti yok.\n{\"title\": \"...\", \"summary\": \"...\", \"action_items\": [\"...\"]}</string>
+
+    <!-- Insight strategy UI strings -->
+    <string name="insight_strategy_label">İçgörü stratejisi</string>
+    <string name="insight_strategy_realtime">Gerçek zamanlı</string>
+    <string name="insight_strategy_batch">Oturum sonu</string>
+    <string name="insight_strategy_realtime_desc">Kayıt sırasında periyodik içgörüler</string>
+    <string name="insight_strategy_batch_desc">Kayıt sonrası kapsamlı analiz</string>
+
+    <!-- Batch processing progress strings -->
+    <string name="batch_insights_pending">Yapay zeka içgörüleri kaydı durdurduğunuzda oluşturulacak</string>
+    <string name="batch_processing_chunk">%2$d parçadan %1$d tanesi işleniyor&#8230;</string>
+    <string name="batch_merging_insights">İçgörüler birleştiriliyor&#8230;</string>
+    <string name="batch_analysis_complete">Analiz tamamlandı</string>
+
+    <!-- Settings: default insight strategy per mode -->
+    <string name="settings_default_strategy">Varsayılan içgörü stratejisi</string>
+
+    <!-- Session card: batch badge -->
+    <string name="session_badge_batch">Toplu</string>
+
+    <!-- Session topic field -->
+    <string name="session_topic_label">Ana konu (isteğe bağlı)</string>
+    <string name="session_topic_hint">örn. Q1 Bütçe İncelemesi, Yapay zeka dersi&#8230;</string>
+    <string name="session_topic_helper">Yapay zekanın odaklanmasına yardımcı olun: daha ilgili içgörüler için ana konuyu açıklayın</string>
+    <!-- Injected as system-prompt prefix when a session topic is set. %1$s = topic text. -->
+    <string name="session_topic_prefix">Bu kaydın ana konusu: \"%1$s\". Analizinizi bu konuya odaklayın.</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Ayarlar</string>
+    <string name="settings_section_short">Kısa Kayıtlar (≤10 dak)</string>
+    <string name="settings_section_long">Uzun Kayıtlar (3 saate kadar)</string>
+    <string name="settings_section_ai">Yapay Zeka Asistanı Yapılandırması</string>
+
+    <!-- Short Recording Settings -->
+    <string name="settings_short_interval_title">Kısa Kayıt İçgörüleri</string>
+    <string name="settings_short_interval_desc">Kısa kayıtlar için içgörü oluşturma aralığı</string>
+    <string name="settings_interval_current">%s saniye</string>
+    <string name="settings_interval_range_min">%ds (%s)</string>
+    <string name="settings_interval_range_max">%ds (%s)</string>
+    <string name="settings_reset_default">Varsayılana sıfırla (%ds)</string>
+    <string name="settings_interval_tip_title">💡 İpucu</string>
+    <string name="settings_interval_tip_desc">Daha kısa aralıklar daha sık içgörü sağlar. Daha uzun aralıklar (3 dakikaya kadar) işlem yükünü azaltır. Değerler 10 saniyelik adımlara yuvarlanır.</string>
+    <string name="settings_save">Kaydet</string>
+    <string name="save">Kaydet</string>
+
+    <!-- Processing / Finalizing session -->
+    <string name="processing_session">Oturum işleniyor…</string>
+
+    <!-- Edit segment / insight / task dialogs -->
+    <string name="edit_transcription_title">Transkripti Düzenle</string>
+    <string name="edit_insight_title">İçgörüyü Düzenle</string>
+    <string name="edit_task_title">Görevi Düzenle</string>
+    <string name="edit_content_hint">İçerik</string>
+    <string name="edit_item">Düzenle</string>
+    <string name="settings_back">Geri</string>
+
+    <!-- Long Recording Settings -->
+    <string name="settings_long_interval_title">Uzun Kayıt İçgörüleri</string>
+    <string name="settings_long_interval_desc">Uzun kayıtlar için içgörü oluşturma aralığı (3 saate kadar)</string>
+    <string name="settings_long_interval_minutes">%d dakika</string>
+
+    <!-- AI System Prompt Settings -->
+    <string name="settings_system_prompt_title">Yapay Zeka Sistem İstemi</string>
+    <string name="settings_system_prompt_desc">Yapay zekanın transkriptleri nasıl analiz ettiğini özelleştirin</string>
+    <string name="settings_system_prompt_hint">Sistem İstemi</string>
+    <string name="settings_system_prompt_reset">Varsayılana Sıfırla</string>
+    <string name="settings_system_prompt_note_title">💡 Not</string>
+    <string name="settings_system_prompt_note_desc">Sistem istemi, yapay zekanın nasıl davranacağını söyler. Yapay zekanın konuştuğunuz dilde yanıt vermesini sağlamak için \'Transkriptle aynı dilde yanıt ver\' ifadesini ekleyin. Değişiklikler LLM yeniden başlatıldıktan sonra geçerli olur.</string>
+
+    <!-- VAD Settings -->
+    <string name="settings_vad_title">Transkripsiyon Doğruluğu Ayarları</string>
+    <string name="settings_vad_desc">Daha iyi doğruluk için ses algılamayı ince ayarlayın (uygulama yeniden başlatması gerektirir)</string>
+    <string name="settings_vad_min_silence">Min Sessizlik Süresi</string>
+    <string name="settings_vad_min_silence_desc">Bir ifadeyi bitirmeden önce ne kadar bekleneceği</string>
+    <string name="settings_vad_max_speech">Maks Konuşma Süresi</string>
+    <string name="settings_vad_max_speech_desc">Zorla kesme öncesi maksimum sürekli konuşma uzunluğu</string>
+    <string name="settings_vad_threshold">Algılama Hassasiyeti</string>
+    <string name="settings_vad_threshold_desc">Düşük = daha hassas (sessiz konuşmayı da algılar)</string>
+    <string name="settings_vad_sensitivity_more">Daha Fazla</string>
+    <string name="settings_vad_sensitivity_less">Daha Az</string>
+    <string name="settings_vad_reset_all">Tümünü varsayılana sıfırla</string>
+    <string name="settings_vad_restart_title">Yeniden Başlatma Gerekli</string>
+    <string name="settings_vad_restart_desc">VAD parametrelerindeki değişikliklerin geçerli olması için uygulamanın yeniden başlatılması gerekir.</string>
+    <string name="settings_vad_troubleshooting_title">💡 Sorun Giderme</string>
+    <string name="settings_vad_troubleshooting_desc">• Kelimeler kesiliyor mu? Min Sessizlik Süresini 0,7-1,0 saniyeye artırın\n• Uzun cümleler bölünüyor mu? Maks Konuşma Süresini 15-20 saniyeye artırın\n• Sessiz konuşma algılanmıyor mu? Algılama Hassasiyetini 0,3-0,4\'e düşürün</string>
+
+    <!-- LLM Sampler Settings -->
+    <string name="settings_section_llm_sampler">Yapay Zeka Üretim Parametreleri</string>
+    <string name="settings_llm_sampler_title">Token Örnekleme</string>
+    <string name="settings_llm_sampler_desc">Yapay zekanın üretim sırasında kelime seçme biçimini kontrol eder. Düşük sıcaklık = daha öngörülebilir; yüksek = daha yaratıcı.</string>
+    <string name="settings_llm_sampler_temperature">Sıcaklık</string>
+    <string name="settings_llm_sampler_temperature_desc">Kelime seçiminin rastgeleliği (0 = belirleyici, 2 = çok rastgele)</string>
+    <string name="settings_llm_sampler_top_k">Top-K</string>
+    <string name="settings_llm_sampler_top_k_desc">Adayları en olası K token ile sınırla (0 = devre dışı)</string>
+    <string name="settings_llm_sampler_top_p">Top-P</string>
+    <string name="settings_llm_sampler_top_p_desc">Çekirdek örnekleme: kümülatif olasılık eşiği (0–1)</string>
+    <string name="settings_llm_sampler_min_p">Min-P</string>
+    <string name="settings_llm_sampler_min_p_desc">En üst tokena göre minimum token olasılığı (0–1)</string>
+    <string name="settings_llm_sampler_repeat_penalty">Tekrar Cezası</string>
+    <string name="settings_llm_sampler_repeat_penalty_desc">Tekrarı azaltmak için son kullanılan tokenları cezalandırır (1,0 = kapalı)</string>
+    <string name="settings_llm_sampler_reset_all">Varsayılana sıfırla</string>
+
+    <!-- Time Formats -->
+    <string name="time_just_now">Az önce</string>
+    <string name="time_minutes_ago">%d dakika önce</string>
+    <string name="time_today">Bugün, %s</string>
+    <string name="time_yesterday">Dün, %s</string>
+
+    <!-- Session Details Screen -->
+    <string name="session_details">Oturum Detayları</string>
+    <!-- Generate AI insight from a history session -->
+    <string name="generate_history_insight">Yapay Zeka İçgörüsü Oluştur</string>
+    <string name="history_insight_confirm_title">Yapay Zeka İçgörüsü Oluştur</string>
+    <string name="history_insight_confirm_message">Bu oturumun tüm transkript segmentlerinin yapay zeka tarafından oluşturulmuş analiziyle yeni bir kopyası oluşturulacak.</string>
+    <string name="history_insight_no_content">İçgörü oluşturmak için yeterli transkript içeriği yok.</string>
+    <!-- Suffix appended to the copy session name, e.g. "My Meeting (AI Analysis)" -->
+    <string name="history_insight_copy_suffix">(Yapay Zeka Analizi)</string>
+    <string name="segments_count">segment</string>
+    <string name="insights_count">içgörü</string>
+    <string name="back">Geri</string>
+    <string name="export">Dışa Aktar</string>
+
+    <string name="export_transcription">Transkripti dışa aktar</string>
+    <string name="delete_session_title">Oturum Silinsin mi?</string>
+    <string name="delete_session_message">\"%s\" oturumunu silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.</string>
+    <string name="delete_session_message_unnamed">Bu oturumu silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.</string>
+    <string name="created">Oluşturuldu</string>
+    <string name="modified">Değiştirildi</string>
+    <string name="llm_insights">LLM İçgörüleri</string>
+    <string name="no_transcription_yet">(Henüz transkript yok)</string>
+
+    <!-- Error Messages -->
+    <string name="error_title">Hata</string>
+    <string name="error_load_sessions">Oturumlar yüklenemedi: %s</string>
+    <string name="error_create_session">Oturum oluşturulamadı: %s</string>
+    <string name="error_delete_session">Oturum silinemedi: %s</string>
+
+    <!-- Default LLM System Prompt -->
+    <string name="default_llm_system_prompt">Gerçek zamanlı konuşma transkriptlerini analiz eden bir yapay zeka asistanısınız.\nTranskriptle aynı dilde yanıt verin.\nÖzlü içgörüler, öneriler veya kısa özetler sunun.\nYanıtları 100 kelime altında tutun. Uygulanabilir ve yardımcı olun.</string>
+
+    <!-- LLM Enable/Disable Settings -->
+    <string name="settings_section_llm">Yapay Zeka Modeli</string>
+    <string name="settings_llm_enabled_title">Yapay Zeka İçgörülerini Etkinleştir</string>
+    <string name="settings_llm_enabled_desc">Etkinleştirildiğinde, yapay zeka modeli her kayıt oturumunun başında yüklenir ve gerçek zamanlı içgörüler oluşturur. Bellek ve pil tasarrufu için devre dışı bırakın.</string>
+
+    <!-- Microphone Permission -->
+    <string name="permission_mic_required">Mikrofon izni gerekli</string>
+    <string name="permission_mic_denied">Mikrofon erişimi reddedildi. Transkripti kullanmak için lütfen uygulama ayarlarından izin verin.</string>
+
+    <!-- Settings Screen - Sections -->
+    <string name="settings_section_appearance">Görünüm</string>
+    <string name="settings_section_simple_listening">Basit Dinleme</string>
+    <string name="settings_section_short_meeting">Kısa Toplantı</string>
+    <string name="settings_section_long_meeting">Uzun Toplantı</string>
+    <string name="settings_section_translation">Canlı Çeviri</string>
+    <string name="settings_section_vad">Ses Etkinliği Algılama (VAD)</string>
+    <string name="settings_interval_analysis">Analiz Aralığı</string>
+    <string name="settings_interval_translation">Çeviri Aralığı</string>
+
+    <!-- Theme Settings -->
+    <string name="settings_theme_title">Tema</string>
+    <string name="settings_theme_desc">Uygulama temasını seçin</string>
+    <string name="theme_system">🔄 Otomatik</string>
+    <string name="theme_light">☀️ Açık</string>
+    <string name="theme_dark">🌙 Koyu</string>
+    <string name="theme_system_short">Otomatik</string>
+    <string name="theme_light_short">Açık</string>
+    <string name="theme_dark_short">Koyu</string>
+    <string name="theme_system_desc">Tema sistem ayarlarını takip eder</string>
+    <string name="theme_light_desc">Uygulama her zaman açık tema kullanır</string>
+    <string name="theme_dark_desc">Uygulama her zaman koyu tema kullanır</string>
+
+    <!-- Translation Settings -->
+    <string name="settings_translation_target_title">Varsayılan Hedef Dil</string>
+    <string name="settings_translation_target_desc">Çeviri için varsayılan dil</string>
+
+    <!-- Session Details Screen -->
+    <string name="session_extracted_tasks">Çıkarılan Görevler</string>
+    <string name="session_no_tasks">Bu oturumda görev bulunamadı.</string>
+    <string name="insight_summary">Özet</string>
+    <string name="insight_suggestions">Öneriler</string>
+    <string name="insight_tasks">Görevler</string>
+
+    <!-- New Session Dialog - Recording Mode -->
+    <string name="new_session_recording_mode">Kayıt Modu</string>
+    <string name="mode_simple_listening">Basit Dinleme</string>
+    <string name="mode_short_meeting">Kısa Toplantı</string>
+    <string name="mode_long_meeting">Uzun Toplantı</string>
+    <string name="mode_translation_live">Canlı Çeviri</string>
+    <string name="mode_simple_listening_desc">Periyodik özetler</string>
+    <string name="mode_short_meeting_desc">Özet, öneriler ve görevler</string>
+    <string name="mode_long_meeting_desc">Uzun oturumlar için derinlemesine analiz</string>
+    <string name="mode_translation_desc">Gerçek zamanlı çeviri</string>
+    <string name="new_session_output_language">Çeviri Çıktı Dili</string>
+    <string name="new_session_output_language_label">Çıktı Dili</string>
+    <string name="new_session_language_auto">Otomatik (Cihaz Dili)</string>
+    <string name="new_session_insight_interval">Her %s</string>
+
+    <!-- Session Details - Tabs and Insight Card -->
+    <string name="tab_transcript">Transkript</string>
+    <string name="ai_analysis">Yapay Zeka Analizi</string>
+    <string name="insight_data">İçgörü</string>
+    <!-- Session Details — AI Insights tab -->
+    <string name="final_insight_label">Genel Özet</string>
+    <string name="create_ai_copy">Yapay Zeka Kopyası Oluştur</string>
+    <string name="generating_ai_insights">Yapay zeka içgörüleri oluşturuluyor\u2026</string>
+    <string name="insights_empty_history">Henüz yapay zeka içgörüsü yok</string>
+    <string name="insights_empty_history_subtitle">Bu transkriptten yapay zeka analizi oluşturmak için yukarıdaki kıvılcım simgesine dokunun</string>
+    <string name="history_insight_copy_info">Bu oturumun yapay zeka analiziyle yeni bir kopyası oluşturulacak.\nOrijinal oturum değiştirilmeyecek.</string>
+    <string name="coachmark_history_insight">Tam oturum geçmişinden yapay zeka içgörüsü oluşturmak için dokunun</string>
+
+    <!-- Setup Screen - Model Info and Actions -->
+    <string name="setup_model_information">Model Bilgisi</string>
+    <string name="setup_model_capability_label">Yetenek:</string>
+    <string name="setup_model_capability_value">Metin analizi &amp; içgörüler</string>
+    <string name="setup_continue_no_ai">Yapay zeka olmadan devam et</string>
+
+    <!-- Setup Screen - AI Benefits -->
+    <string name="setup_ai_insights_title">Yapay Zeka Destekli İçgörüler</string>
+    <string name="setup_ai_why_title">Neden yapay zeka modelini indirmeliyim?</string>
+    <string name="setup_ai_benefit_realtime">Konuşurken gerçek zamanlı öneriler ve içgörüler alın</string>
+    <string name="setup_ai_benefit_analysis">Yapay zeka konuşma kalıplarınızı analiz eder ve yararlı bağlam sağlar</string>
+    <string name="setup_ai_benefit_offline">Tamamen çevrimdışı çalışır: verileriniz cihazınızda gizli kalır</string>
+    <string name="setup_ai_benefit_fast">İnternet gerektirmeyen hızlı cihaz üzeri işleme</string>
+    <string name="setup_downloading_model">Model İndiriliyor...</string>
+
+    <!-- Welcome Screen -->
+    <string name="welcome_subtitle">Gerçek Zamanlı Konuşma Analizi</string>
+    <string name="welcome_feature_transcription_title">Canlı Transkripsiyon</string>
+    <string name="welcome_feature_transcription_desc">Yüksek doğrulukla konuşmayı gerçek zamanlı metne dönüştürün</string>
+    <string name="welcome_feature_ai_title">Yapay Zeka İçgörüleri</string>
+    <string name="welcome_feature_ai_desc">Konuşurken akıllı öneriler ve analiz alın</string>
+    <string name="welcome_feature_privacy_title">Gizlilik Önce</string>
+    <string name="welcome_feature_privacy_desc">Tüm işlemler cihazınızda gerçekleşir: verileriniz asla çıkmaz</string>
+    <string name="welcome_get_started">Başla</string>
+    <string name="welcome_models_required">İki model indirmesi gerekli</string>
+
+    <!-- Onboarding - Common -->
+    <string name="onboarding_model_label">Model:</string>
+    <string name="onboarding_runs_label">Çalışır:</string>
+    <string name="onboarding_source_label">Kaynak:</string>
+    <string name="onboarding_on_device">Cihazda</string>
+    <string name="onboarding_huggingface">HuggingFace</string>
+    <string name="onboarding_downloading">İndiriliyor...</string>
+    <string name="onboarding_download_progress">%d MB / %d MB</string>
+    <string name="onboarding_download_speed">Hız:</string>
+    <string name="onboarding_download_speed_value">%.2f MB/s</string>
+    <string name="onboarding_download_eta">Kalan süre:</string>
+    <string name="onboarding_download_failed">İndirme Başarısız</string>
+    <string name="onboarding_retry_download">İndirmeyi Yeniden Dene</string>
+    <string name="download_resuming_from">%1$s MB\'den devam ediliyor…</string>
+    <string name="onboarding_continue">Devam Et</string>
+    <string name="onboarding_time_seconds">%d sn</string>
+    <string name="onboarding_time_minutes">%d dak %d sn</string>
+    <string name="onboarding_time_hours">%d sa %d dak</string>
+
+    <!-- Onboarding - STT Download -->
+    <string name="onboarding_stt_title">Konuşma Tanıma</string>
+    <string name="onboarding_stt_ready">Model Hazır!</string>
+    <string name="onboarding_stt_ready_desc">Konuşma tanıma modeli başarıyla indirildi.</string>
+    <string name="onboarding_stt_model_title">Konuşma Tanıma Modeli</string>
+    <string name="onboarding_stt_model_desc">Bu model konuşmanızı gerçek zamanlı olarak metne dönüştürür. Uygulamanın çalışması için zorunludur.</string>
+    <string name="onboarding_stt_model_name">Sherpa-ONNX Parakeet</string>
+    <string name="onboarding_stt_download_button">Modeli İndir</string>
+    <string name="onboarding_stt_note">Bu model uygulamanın çalışması için zorunludur.</string>
+
+    <!-- Onboarding - Supported Languages -->
+    <string name="onboarding_languages_title">Desteklenen Diller</string>
+    <string name="onboarding_languages_subtitle">Transkripsiyon ve çeviri için kullanılabilir</string>
+    <string name="onboarding_languages_continue">Devam Et</string>
+
+    <!-- Onboarding - LLM Download -->
+    <string name="onboarding_llm_title">Yapay Zeka Zekası</string>
+    <string name="onboarding_llm_optional">Yapay Zeka İçgörüleri (İsteğe Bağlı)</string>
+    <string name="onboarding_llm_desc">Konuşurken akıllı içgörüler ve öneriler almak için bir yapay zeka modeli indirin.</string>
+    <string name="onboarding_llm_benefit_1">Gerçek zamanlı öneriler</string>
+    <string name="onboarding_llm_benefit_2">Bağlama duyarlı analiz</string>
+    <string name="onboarding_llm_benefit_3">%100 gizli ve çevrimdışı</string>
+    <string name="onboarding_llm_model_name">Gemma 3 1B</string>
+    <string name="onboarding_llm_download_button">Yapay Zeka Modelini İndir</string>
+    <string name="onboarding_llm_skip">Şimdilik atla (Yalnızca Transkripsiyon)</string>
+    <string name="onboarding_llm_downloading">Yapay Zeka Modeli İndiriliyor...</string>
+    <string name="onboarding_llm_downloaded_label">İndirildi:</string>
+    <string name="onboarding_llm_complete">İndirme Tamamlandı!</string>
+    <string name="onboarding_llm_initializing">Yapay zeka modeli başlatılıyor...</string>
+    <string name="onboarding_llm_skip_short">Şimdilik atla</string>
+    <string name="onboarding_llm_skip_note">Şimdi atlarsanız bunu daha sonra Ayarlar\'dan indirebilirsiniz. Uygulama yalnızca transkripsiyon ile sorunsuz çalışır.</string>
+
+    <!-- Search screen -->
+    <string name="search_hint">Transkriptlerde ara…</string>
+    <string name="search_empty_prompt">Transkriptlerinizde arayın</string>
+    <string name="search_no_results">Eşleşme bulunamadı</string>
+    <string name="search_source_transcription">Transkript</string>
+    <string name="search_source_insight">İçgörü</string>
+    <string name="search_source_session_name">Oturum adı</string>
+
+    <!-- Onboarding carousel messages shown while the LLM model is downloading -->
+    <string name="onboarding_message_1">HearoPilot sizin yerinize dinler, not tutmanıza gerek kalmaz.</string>
+    <string name="onboarding_message_2">Tüm yapay zeka işlemleri cihazınızda çalışır: hiçbir veri dışarı çıkmaz.</string>
+    <string name="onboarding_message_3">Dersleri, toplantıları ve konuşmaları gerçek zamanlı olarak yazıya dökün.</string>
+    <string name="onboarding_message_4">Otomatik özetler en önemli konulara odaklanmanıza yardımcı olur.</string>
+    <string name="onboarding_message_5">Tamamen çevrimdışı çalışır: sesiniz gizli kalır.</string>
+    <string name="onboarding_message_6">Birkaç dokunuşla dinleme modları arasında geçiş yapın.</string>
+    <string name="onboarding_message_7">Öğrenciler, profesyoneller ve konuşan herkes için idealdir.</string>
+    <string name="onboarding_message_8">Transkriptlerinizi ve içgörülerinizi istediğiniz zaman, çevrimdışı inceleyin.</string>
+    <string name="onboarding_message_9">Başlamak için bir dokunuş, durdurmak için bir dokunuş: bu kadar basit.</string>
+    <string name="onboarding_message_10">HearoPilot\'u seçtiğiniz için teşekkürler.</string>
+    <string name="onboarding_message_11">Uzaktan transkripsiyon için HearoPilot\'u Bluetooth mikrofonla kullanın.</string>
+
+    <!-- About & Legal section in Settings -->
+    <string name="settings_section_about">Hakkında &amp; Yasal</string>
+    <string name="settings_privacy_policy">Gizlilik Politikası</string>
+    <string name="settings_open_source_licenses">Açık Kaynak Lisansları</string>
+    <string name="settings_open_source_licenses_desc">Üçüncü taraf kütüphaneler ve yapay zeka modelleri</string>
+    <string name="settings_recording_modes">Kayıt Modları</string>
+
+    <!-- Open Source Licenses screen -->
+    <string name="licenses_title">Açık Kaynak Lisansları</string>
+    <string name="licenses_intro">HearoPilot aşağıdaki üçüncü taraf yazılımları ve yapay zeka modellerini kullanır. Tam lisans metnini okumak için bir karta dokunun.</string>
+    <string name="licenses_open_url">Aç</string>
+    <string name="licenses_show_full_text">Tam lisansı göster</string>
+    <string name="licenses_hide_full_text">Tam lisansı gizle</string>
+
+    <!-- Model info rows in download screens -->
+    <string name="onboarding_license_label">Lisans:</string>
+
+    <!-- LLM model download in Settings -->
+    <string name="settings_llm_model_file_title">Yapay Zeka Model Dosyası</string>
+    <string name="settings_llm_model_file_desc">Yapay zeka modeli tamamen cihazınızda çalışır. İndirmeden sonra internete gerek yoktur.</string>
+    <string name="settings_llm_model_ready">Hazır</string>
+    <string name="settings_llm_model_not_downloaded">İndirilmedi</string>
+    <string name="settings_llm_model_download">İndir</string>
+    <string name="settings_llm_model_retry">İndirmeyi Yeniden Dene</string>
+    <string name="settings_llm_model_downloading">İndiriliyor %1$d%%</string>
+
+    <!-- LLM Model Variant Setting -->
+    <string name="settings_llm_model_variant_title">Yapay Zeka Model Kalitesi</string>
+    <string name="settings_llm_model_variant_desc">Daha yüksek doğruluk veya daha iyi pil verimliliği arasında seçin. Değiştirdikten sonra modeli yeniden indirin.</string>
+    <string name="settings_llm_model_variant_q8_name">Standart (Q8)</string>
+    <string name="settings_llm_model_variant_q8_desc">Daha yüksek doğruluk · Amiral gemisi cihazlar için</string>
+    <string name="settings_llm_model_variant_iq4_name">Verimli (IQ4)</string>
+    <string name="settings_llm_model_variant_iq4_desc">Enerji verimliliği için optimize edilmiş</string>
+    <string name="settings_llm_model_variant_recommended">Cihazınız için önerilen</string>
+    <string name="settings_llm_model_variant_downloaded">İndirildi</string>
+    <string name="settings_llm_model_variant_beta">Beta</string>
+    <string name="settings_llm_advanced_section_title">Gelişmiş Modeller</string>
+    <string name="settings_llm_advanced_section_desc">İleri kullanıcılar için deneysel modeller. Performans standart modellerden farklılık gösterebilir.</string>
+    <string name="settings_llm_model_variant_qwen35_name">Qwen 3.5 0.8B (Q8)</string>
+    <string name="settings_llm_model_variant_qwen35_desc">Alternatif mimari · Deneysel</string>
+</resources>
